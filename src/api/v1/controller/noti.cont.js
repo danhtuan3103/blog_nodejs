@@ -1,8 +1,5 @@
-const blogSchema = require("../models/blog.model");
-const userSchema = require("../models/user.model");
+
 const notiSchema = require("../models/noti.model");
-const { io } = require("../../../../server");
-const createError = require("http-errors");
 
 class NotiController {
   async getNotification(req, res, next) {
