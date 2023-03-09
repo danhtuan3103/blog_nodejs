@@ -14,6 +14,8 @@ const route = require('./src/api/v1/routes');
 const {verifyAccessTokenSocket} = require('./src/api/v1/hepler/jwt')
 const server = require('http').createServer(app);
 const socket = require('./src/api/v1/services/socket');
+const path = require('path');
+
 const io = require('socket.io')(server, {
     cors: {
         origin: 'https://localhost:3000'
@@ -22,7 +24,9 @@ const io = require('socket.io')(server, {
 
 io.use(verifyAccessTokenSocket)
 
+
 socket.connect(io);
+const fileName = path.join(__dirname, '../src/api/v1/Logs', 'error.log');
 
 db.connect();
 redis.connect();
