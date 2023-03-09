@@ -1,4 +1,4 @@
-const logEvent = require('./logEvent');
+const logEvent = require('./LogEvent');
 
 module.exports = {
     logEvent
