@@ -1,0 +1,141 @@
+@basicURL = http://localhost:4000/api/v1
+
+// Users
+### Get all users
+GET  {{basicURL}}/user
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2M2Q3YWI5MjMxNzBjOWE2YjNmNDZmMGUiLCJpYXQiOjE2NzUxMjk2OTEsImV4cCI6MTY3NTEyOTc1MX0.Rhh440U-9dLm9GpVApCB_IoIbAnxDFJDGIwXJPRHQ-c
+
+### Register
+POST  {{basicURL}}/user/register
+Content-Type: application/json 
+
+{
+    "username": "admin",
+    "password": "admin",
+    "email": "admin@gmail.com"
+}
+
+### login
+POST  {{basicURL}}/user/login
+Content-Type: application/json 
+
+{
+    "email": "admin@example.com",
+    "password": "admin"
+}
+
+### refresh-token
+
+POST {{basicURL}}/user/refresh-token 
+Content-Type: application/json 
+
+{
+    "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2M2Q3YWI5MjMxNzBjOWE2YjNmNDZmMGUiLCJpYXQiOjE2NzUxMzAxNTcsImV4cCI6MTcwNjY4Nzc1N30.iBASbtURGTAyfM4ZA3UF0yGlHbSjm1Yk99j1BcIR72Q"
+}
+###
+
+POST {{basicURL}}/user/logout 
+Content-Type: application/json 
+
+{
+    "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2M2Q3YWI5MjMxNzBjOWE2YjNmNDZmMGUiLCJpYXQiOjE2NzU0NzQzMDQsImV4cCI6MTcwNzAzMTkwNH0.tw29LS271Nj1puCQvpmksPlxccaZY8UdyG79in-i4nk"
+}
+
+// Blog
+### Get All Blogs
+GET {{basicURL}}/blog
+
+### Create Blog
+POST {{basicURL}}/blog/create
+Content-Type: application/json 
+
+{
+    "title": "Hello",
+    "content": "ddsadasd Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur, Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur",
+    "author": "63e0f47251fa703dd38f63c3",
+    "thumbnail": "https://masteringjs.io/assets/images/footer/logo.svg",
+    "topic": "React, MongoDb"
+}
+
+### like blog
+POST {{basicURL}}/blog/like
+Content-Type: application/json 
+
+{
+    "blog_id" : "63e19dac0631fc10928d5e08",
+    "user_id" : "63e19d280631fc10928d5e12"
+}
+
+### Get Like
+GET {{basicURL}}/blog/like/63e19dac0631fc10928d5e08
+
+### GET Comment
+GET {{basicURL}}/blog/comment/63e19dac0631fc10928d5e08
+
+### Add Comment
+
+POST {{basicURL}}/blog/comment/63e19dac0631fc10928d5e08
+Content-Type: application/json 
+
+{
+    "author":"63e19d280631fc10928d5e02",
+    "content": "So pretty good article",
+    "isRoot": false,
+    "parrent": "63e19d280631fc10928d5e02"
+}
+
+### Get All Bookmarks
+GET {{basicURL}}/bookmark/640614915002e7e64caec6dd
+
+### add bookmark
+POST {{basicURL}}/bookmark
+Content-Type: application/json 
+
+{
+    "user_id":"640617b15002e7e64caec8f4",
+    "blog_id": "640614f65002e7e64caec6e2"
+
+}
+
+### remove bookmark 
+PATCH {{basicURL}}/bookmark
+Content-Type: application/json 
+
+{
+    "user_id":"640614915002e7e64caec6dd",
+    "blog_id": "640614f65002e7e64caec6e2"
+
+}
+
+### check bookmarked
+POST {{basicURL}}/bookmark/check
+Content-Type: application/json 
+
+{
+    "user_id":"640617b15002e7e64caec8f4",
+    "blog_id": "640614f65002e7e64caec6e2"
+
+}
+
+### Notifications
+
+POST {{basicURL}}/notifications
+Content-Type: application/json 
+
+{
+    "user_id":"EVERYONE",
+    "notification": {   
+        "type": "COMMENT",
+        "receiver": "640614f65002e7e64caec6e2",
+        "sender":"640617b15002e7e64caec8f4",
+        "target": "640614f65002e7e64caec6e2",
+        "message":"HELLO WORLD"
+        }
+
+}
+
+### GET
+GET {{basicURL}}/notifications/640614915002e7e64caec6dd
+
+
+

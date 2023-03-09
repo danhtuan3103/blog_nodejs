@@ -1,0 +1,96 @@
+08-03-2023	21:59:56 ---- d4cec6bd-c171-45ae-bc64-109dd98a606e --- (POST) /api/v1/notifications --- Not Found!
+08-03-2023	22:00:53 ---- 39b4d10a-21db-44a1-bb33-02ef34bf2d13 --- (POST) /api/v1/notifications --- Not Found!
+09-03-2023	12:37:56 ---- c4c8fb47-4be2-4048-852f-27520388789e --- (POST) /api/v1/blog/suggestion --- Not Found!
+09-03-2023	12:37:56 ---- 396e36c8-6e6e-4e3f-a641-86d18c21289b --- (POST) /api/v1/blog/suggestion --- Not Found!
+09-03-2023	12:37:56 ---- d1224890-689c-49c2-b0c5-2e5e0b6d62ac --- (POST) /api/v1/blog/suggestion --- Not Found!
+09-03-2023	12:37:56 ---- 5e008d29-d4b2-4b06-a62e-e8920219f0d1 --- (POST) /api/v1/blog/suggestion --- Not Found!
+09-03-2023	12:37:57 ---- 8c55f088-7783-4f77-a073-be6a2f2bf876 --- (POST) /api/v1/blog/suggestion --- Not Found!
+09-03-2023	12:37:57 ---- 31c262bb-55b3-4f92-aad0-fc65a8144977 --- (POST) /api/v1/blog/suggestion --- Not Found!
+09-03-2023	12:37:57 ---- 97d85e68-b233-458a-81c9-765389be7616 --- (POST) /api/v1/blog/suggestion --- Not Found!
+09-03-2023	12:37:57 ---- 17fcf3da-1913-4ba3-9460-96f95f400af5 --- (POST) /api/v1/blog/suggestion --- Not Found!
+09-03-2023	12:37:57 ---- 452f9963-08ba-48ba-b008-f0ee17088089 --- (POST) /api/v1/blog/suggestion --- Not Found!
+09-03-2023	12:37:57 ---- 4c5c2ca8-1b20-4b73-94da-1e8819288d6a --- (POST) /api/v1/blog/suggestion --- Not Found!
+09-03-2023	12:37:57 ---- e7848408-287b-41ed-a12e-d691599db684 --- (POST) /api/v1/blog/suggestion --- Not Found!
+09-03-2023	12:40:02 ---- 2e1b50b3-2a30-4472-beaf-c540858eab15 --- (POST) /api/v1/blog/suggestion --- Not Found!
+09-03-2023	12:40:02 ---- c3a6c8f6-4aba-453c-a14e-8142394fe63a --- (POST) /api/v1/blog/suggestion --- Not Found!
+09-03-2023	12:40:02 ---- 4b3684c4-665c-468a-880e-2a6e03c6f88e --- (POST) /api/v1/blog/suggestion --- Not Found!
+09-03-2023	12:40:02 ---- 70ca6e7f-5bf0-4ef2-9703-768ecde5b827 --- (POST) /api/v1/blog/suggestion --- Not Found!
+09-03-2023	12:40:26 ---- b83f2e46-55b0-4d0f-9fb1-7c1c96d92310 --- (POST) /api/v1/blog/suggestion --- Not Found!
+09-03-2023	12:40:26 ---- cf751522-543a-45b2-92e4-e1cc09efc83d --- (POST) /api/v1/blog/suggestion --- Not Found!
+09-03-2023	12:40:26 ---- ab8c61ee-e983-4be1-9635-df1bf441b686 --- (POST) /api/v1/blog/suggestion --- Not Found!
+09-03-2023	12:40:26 ---- 51c855f5-4658-4385-9e05-cf5de841321b --- (POST) /api/v1/blog/suggestion --- Not Found!
+09-03-2023	12:40:36 ---- 2621dbd7-2a55-430a-82de-cc9b05597bc7 --- (POST) /api/v1/blog/suggestion --- Not Found!
+09-03-2023	12:40:37 ---- f06d5064-c6cf-4f9f-a465-f0425e57b47c --- (POST) /api/v1/blog/suggestion --- Not Found!
+09-03-2023	12:40:37 ---- 36f761b6-998f-4070-b1d5-8c7243181a57 --- (POST) /api/v1/blog/suggestion --- Not Found!
+09-03-2023	12:40:37 ---- df968dcb-a0f4-44cd-89f3-6f913181fbd8 --- (POST) /api/v1/blog/suggestion --- Not Found!
+09-03-2023	12:41:02 ---- 501757a4-2c47-4e68-8aaa-e114206d352d --- (POST) /api/v1/blog/suggestion --- Not Found!
+09-03-2023	12:41:02 ---- a4214cf0-bbfa-408a-97b7-2ecf0be92bee --- (POST) /api/v1/blog/suggestion --- Not Found!
+09-03-2023	12:41:16 ---- da9aa0cd-132c-4bb5-a149-581d1db552c8 --- (POST) /api/v1/blog/suggestion --- Not Found!
+09-03-2023	12:43:58 ---- 2b6ce25f-407f-41d9-91e0-bafdf59adcc8 --- (POST) /api/v1/blog/suggestion --- Cast to Object failed for value "" (type string) at path "$or.0" for model "Blog"
+09-03-2023	12:45:02 ---- 1cf326e9-5f1d-49ba-9b3a-a47a64f92b98 --- (POST) /api/v1/blog/suggestion --- Cast to Object failed for value "" (type string) at path "$or.0" for model "Blog"
+09-03-2023	12:45:15 ---- ae866e67-5022-4694-8334-1bdd7c560c68 --- (POST) /api/v1/blog/suggestion --- Cast to Object failed for value "" (type string) at path "$or.0" for model "Blog"
+09-03-2023	12:46:01 ---- 89f9f656-6df5-4bdb-a4a1-457c9af08902 --- (POST) /api/v1/blog/suggestion --- Cannot convert undefined or null to object
+09-03-2023	12:46:01 ---- 4c5818f5-c602-4d70-9cf2-2a9cb3ec2c31 --- (POST) /api/v1/blog/suggestion --- Cannot convert undefined or null to object
+09-03-2023	12:46:07 ---- 716c3280-b1fe-47b2-99dc-7354b86443bd --- (POST) /api/v1/blog/suggestion --- Cannot convert undefined or null to object
+09-03-2023	12:46:07 ---- 9a99f89e-4b34-44f8-bb54-c50bd3b60bda --- (POST) /api/v1/blog/suggestion --- Cannot convert undefined or null to object
+09-03-2023	12:46:15 ---- 1a18ccde-c9ea-4fac-9f1b-a8828b1cf991 --- (POST) /api/v1/blog/suggestion --- Cannot convert undefined or null to object
+09-03-2023	12:46:15 ---- 7cac2657-b2ba-4171-91ba-93d6cbf3f22e --- (POST) /api/v1/blog/suggestion --- Cannot convert undefined or null to object
+09-03-2023	12:46:19 ---- 39feffa4-63c3-4e67-987a-f4e26f3d39bf --- (POST) /api/v1/blog/suggestion --- Cannot convert undefined or null to object
+09-03-2023	12:46:19 ---- 269425d7-05c5-49c3-a0b8-100d48fc5bf7 --- (POST) /api/v1/blog/suggestion --- Cannot convert undefined or null to object
+09-03-2023	12:47:49 ---- 015f24fb-6225-44b5-a359-5f00ca7db081 --- (POST) /api/v1/blog/suggestion --- Cannot convert undefined or null to object
+09-03-2023	12:47:58 ---- ecbbe0ea-6b0d-4ca5-b2bc-47378c89e666 --- (POST) /api/v1/blog/suggestion --- Cannot convert undefined or null to object
+09-03-2023	12:48:34 ---- eebe616d-278e-48b2-95a3-8d3c4aba3ede --- (POST) /api/v1/blog/suggestion --- Cannot convert undefined or null to object
+09-03-2023	12:48:59 ---- e2dab19f-cf5d-4485-986d-de2d1f05f92f --- (POST) /api/v1/blog/suggestion --- Cannot convert undefined or null to object
+09-03-2023	12:49:13 ---- 212c291e-646e-4754-a26d-8f8321750195 --- (POST) /api/v1/blog/suggestion --- Cannot convert undefined or null to object
+09-03-2023	12:49:28 ---- 1f07ecbe-ac79-43ab-9163-e34316ff0054 --- (POST) /api/v1/blog/suggestion --- Cannot convert undefined or null to object
+09-03-2023	12:49:28 ---- 37ce297b-604f-40d4-b361-2e9067e55f45 --- (POST) /api/v1/blog/suggestion --- Cannot convert undefined or null to object
+09-03-2023	12:49:29 ---- 9b7e0f71-bc26-4fe3-9f28-c075fbc0ac39 --- (POST) /api/v1/blog/suggestion --- Cannot convert undefined or null to object
+09-03-2023	12:49:29 ---- adb8abef-88b7-49b5-93ba-623d165ca039 --- (POST) /api/v1/blog/suggestion --- Cannot convert undefined or null to object
+09-03-2023	12:49:58 ---- 036dd2b3-87c7-48a9-bab7-4c31124e4965 --- (POST) /api/v1/blog/suggestion --- Cannot convert undefined or null to object
+09-03-2023	12:50:06 ---- bbb37806-0d49-48a0-9ed0-0c2c4c94c52b --- (POST) /api/v1/blog/suggestion --- Cannot convert undefined or null to object
+09-03-2023	12:50:50 ---- 7e715302-1de2-4c36-99ac-6983861234fb --- (POST) /api/v1/blog/suggestion --- Query filter must be an object, got an array 
+09-03-2023	12:50:50 ---- ac1ddbc9-cbc8-4c90-8dc2-b82979372918 --- (POST) /api/v1/blog/suggestion --- Query filter must be an object, got an array 
+09-03-2023	12:50:56 ---- b33af22e-75be-4792-b75f-122a72b797d6 --- (POST) /api/v1/blog/suggestion --- Query filter must be an object, got an array 
+09-03-2023	12:50:56 ---- 3792709d-c823-475e-b295-f1c01ef82d94 --- (POST) /api/v1/blog/suggestion --- Query filter must be an object, got an array 
+09-03-2023	12:51:14 ---- 67a1e4ba-5536-498a-9df2-0beea8cddcf9 --- (POST) /api/v1/blog/suggestion --- Query filter must be an object, got an array 
+09-03-2023	12:51:14 ---- d46223ae-438e-4a98-bfca-383e4a1d36f6 --- (POST) /api/v1/blog/suggestion --- Query filter must be an object, got an array 
+09-03-2023	12:51:18 ---- 660cb3c9-7723-4fe2-9e15-f49ff1fafd24 --- (POST) /api/v1/blog/suggestion --- Cannot convert undefined or null to object
+09-03-2023	12:51:18 ---- ecb9814c-deba-40b0-af9a-2639babb1ddf --- (POST) /api/v1/blog/suggestion --- Query filter must be an object, got an array 
+09-03-2023	12:51:18 ---- b26d330d-9691-4ece-9c65-869cc626c45c --- (POST) /api/v1/blog/suggestion --- Query filter must be an object, got an array 
+09-03-2023	12:52:57 ---- 110a5859-9677-4da3-aaf9-02adfabae8d3 --- (POST) /api/v1/blog/suggestion --- Cannot convert undefined or null to object
+09-03-2023	12:52:58 ---- 72c98030-9da8-46ae-875d-057e5c820a44 --- (POST) /api/v1/blog/suggestion --- Query filter must be an object, got an array 
+09-03-2023	12:52:58 ---- 7e4bd46e-a232-4830-966f-6b2b49118b4c --- (POST) /api/v1/blog/suggestion --- Query filter must be an object, got an array 
+09-03-2023	12:54:33 ---- efccafcb-833b-4689-8838-2f55f04cb569 --- (POST) /api/v1/blog/suggestion --- Cannot convert undefined or null to object
+09-03-2023	12:54:34 ---- 9df1647d-3131-4e08-86f3-d633524893db --- (POST) /api/v1/blog/suggestion --- Query filter must be an object, got an array 
+09-03-2023	12:54:34 ---- e921db08-7e9e-42f9-9739-ce092e224273 --- (POST) /api/v1/blog/suggestion --- Query filter must be an object, got an array 
+09-03-2023	16:57:33 ---- a7419757-91af-49fe-8a5f-afc7a3fba7ab --- (GET) /apple-touch-icon-precomposed.png --- Not Found!
+09-03-2023	16:57:33 ---- 82236bb4-3c29-4f8c-ab5c-58317e79547f --- (GET) /apple-touch-icon.png --- Not Found!
+09-03-2023	19:53:49 ---- dae67a76-f59a-47b4-8c81-92ec25f35995 --- (GET) /api/v1/images/avatar/peeps-avatar.png --- Not Found!
+09-03-2023	19:53:50 ---- 28348735-db7e-4a2c-994f-66464f151c2b --- (GET) /favicon.ico --- Not Found!
+09-03-2023	19:56:17 ---- 8538eb7a-171e-4b7f-958d-f57862a60552 --- (GET) /public/images/avatar/peeps-avatar.png --- Not Found!
+09-03-2023	19:56:33 ---- 89778f90-d3cd-4d3d-b78d-4561a5c52a7a --- (GET) /public/images/avatar/peeps-avatar.png --- Not Found!
+09-03-2023	19:56:35 ---- d12091df-5155-48a3-b23a-ea1224bb6862 --- (GET) /public/images/avatar/peeps-avatar.png --- Not Found!
+09-03-2023	19:56:59 ---- a5835662-0d5e-4602-b3fe-fbc6eb75fdb0 --- (GET) /public/images/avatar/peeps-avatar.png --- Not Found!
+09-03-2023	19:58:06 ---- 7b6102c6-e4a4-47ad-9593-e63a018562a0 --- (GET) /images/avatar/ --- Not Found!
+09-03-2023	20:05:03 ---- fef1ab57-a9db-4277-ace8-edb99b15fd1b --- (GET) /images/avatar/avatar_1 --- Not Found!
+09-03-2023	20:07:20 ---- d65e1a25-7fe4-4595-ba2b-9d0f111186aa --- (GET) /images/avatar/avatar_1 --- Not Found!
+09-03-2023	20:07:24 ---- 242baac7-c7c1-434f-9f56-30c480521003 --- (GET) /images/avatar/avatar_1 --- Not Found!
+09-03-2023	20:07:41 ---- c8c25183-8abd-4886-930d-3d6d84fb49e7 --- (GET) /images/avatar/avatar_1 --- Not Found!
+09-03-2023	20:07:44 ---- 066ae234-e5d2-48f1-a723-75e9c6e75d6b --- (GET) /images/avatar/avatar_1 --- Not Found!
+09-03-2023	20:27:31 ---- 11d6cb63-4ad7-46db-9039-5dcc41e38a24 --- (GET) /images/avatar/avatars.json --- Not Found!
+09-03-2023	22:24:01 ---- 8ff218fd-d3e5-4b08-8638-d420a751c451 --- (GET) /api/v1/notifications --- Not Found!
+09-03-2023	22:24:01 ---- 3330434a-8b2c-455c-920e-5e7b874e7e48 --- (GET) /api/v1/notifications --- Not Found!
+09-03-2023	22:24:01 ---- e1db5ab9-1c3d-4add-9ff4-0164c50cc5dd --- (GET) /api/v1/notifications --- Not Found!
+10-03-2023	00:05:07 ---- 2478f2b9-6961-4c3e-bf22-8bc29b2a2e21 --- (POST) /api/v1/user/avatar --- avatar is not defined
+10-03-2023	00:06:25 ---- 765d3ffd-9554-4a42-bb98-dd1bcc991c67 --- (POST) /api/v1/user/avatar --- avatar is not defined
+10-03-2023	00:08:11 ---- 7341c4aa-1181-4c32-acaf-a49ef5fd80e6 --- (POST) /api/v1/user/avatar --- Converting circular structure to JSON
+    --> starting at object with constructor 'MongoClient'
+    |     property 's' -> object with constructor 'Object'
+    |     property 'sessionPool' -> object with constructor 'ServerSessionPool'
+    --- property 'client' closes the circle
+10-03-2023	00:08:54 ---- 45f96934-9d2e-47a2-bf07-5207537169c6 --- (POST) /api/v1/user/avatar --- Converting circular structure to JSON
+    --> starting at object with constructor 'MongoClient'
+    |     property 's' -> object with constructor 'Object'
+    |     property 'sessionPool' -> object with constructor 'ServerSessionPool'
+    --- property 'client' closes the circle
+10-03-2023	00:25:05 ---- 11270b8d-3c0b-42c2-b992-1ab315a2a43c --- (POST) /api/v1/user/login --- "email" must be a valid email
