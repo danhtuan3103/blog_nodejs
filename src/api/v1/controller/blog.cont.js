@@ -113,7 +113,7 @@ class BlogController {
           content: content,
           author: author,
           thumbnail: thumbnail,
-          topic: _topic,
+          topic: _topic.trim(),
         });
 
         const savedBlog = await blog.save();
