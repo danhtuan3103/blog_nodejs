@@ -76,10 +76,7 @@ class BlogController {
   async getBlogById(req, res, next) {
     try {
       const id = req.params.id;
-      const isUser = await find({_id : id});
-      if(!isUser) {
-        return next(createError.Unauthorized());
-      }
+
 
       if (!id) {
         return res.json(401).json({
