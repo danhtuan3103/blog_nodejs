@@ -99,8 +99,9 @@ class BlogController {
 
       const { title, content, author, thumbnail = null, topic } = req.body;
       const isExit = await userSchema.find({ _id: author._id });
-      const _topic = topic.split(",");
+      let _topic = topic.split(",");
 
+      _topic = _topic.map((topic) => topic.trim());
       if (isExit) {
         const { error } = blogValidate({ title, content, author, topic });
 
@@ -113,7 +114,7 @@ class BlogController {
           content: content,
           author: author,
           thumbnail: thumbnail,
-          topic: _topic.trim(),
+          topic: _topic,
         });
 
         const savedBlog = await blog.save();
