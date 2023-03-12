@@ -4,22 +4,34 @@ const blogSchema = require("../models/blog.model");
 class CommentController {
   async getComments(req, res, next) {
     try {
+      console.log('GET COMMENT')
+
       const blog_id = req.params.id;
       const _blog_id = new RegExp(`^${blog_id}`);
-      const comments = await commentSchema.find({ blog_id: _blog_id });
+      const comments = await commentSchema
+        .find({ blog_id: _blog_id })
+        .populate({
+          path: "comments.author",
+          select: ["_id", "username", "avatar"],
+        });
 
       const commentArray = comments.reduce((init, comment) => {
         return init.concat(comment.comments);
       }, []);
 
       res.json({
-        comments: commentArray || [],
+        status: "success",
+        data: commentArray || [],
       });
-    } catch (error) {}
+    } catch (error) {
+      next(error);
+    }
   }
 
   async addComment(req, res, next) {
     try {
+      console.log('ADD COMEMENT')
+
       const blog_id = req.params.id;
       const _blog_id = new RegExp(`^${blog_id}`);
       const { content, isRoot, parrent } = req.body;
@@ -39,6 +51,12 @@ class CommentController {
         });
 
         const newComent = await comment.save();
+        const comments = await commentSchema
+          .find({ blog_id: _blog_id })
+          .populate({
+            path: "comments.author",
+            select: ["_id", "username", "avatar"],
+          });
 
         if (newComent) {
           const newBlog = await blogSchema.findOneAndUpdate(
@@ -48,11 +66,21 @@ class CommentController {
             },
             { new: true }
           );
+          const _comments = await commentSchema
+            .find({ blog_id: _blog_id })
+            .populate({
+              path: "comments.author",
+              select: ["_id", "username", "avatar"],
+            });
+
+          const commentArray = _comments.reduce((init, comment) => {
+            return init.concat(comment.comments);
+          }, []);
 
           if (newBlog) {
-            return res.status(200).send({
-              data: newComent.comments,
-            });
+            return res
+              .status(200)
+              .send({ status: "success", data: commentArray || [] });
           }
         }
         // console.log("Hello ",newComent);
@@ -90,13 +118,19 @@ class CommentController {
           );
 
           if (newBlog) {
-            const comments = await commentSchema.find({ blog_id: _blog_id });
+            const comments = await commentSchema
+              .find({ blog_id: _blog_id })
+              .populate({
+                path: "comments.author",
+                select: ["_id", "username", "avatar"],
+              });
 
             const commentArray = comments.reduce((init, comment) => {
               return init.concat(comment.comments);
             }, []);
 
             res.json({
+              status: "success",
               data: commentArray || [],
             });
           }

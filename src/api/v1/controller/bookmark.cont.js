@@ -7,6 +7,7 @@ const createError = require("http-errors");
 class BookmarkController {
   async getBookmarks(req, res, next) {
     try {
+      console.log("GET BOOKMARKS");
       const user_id = req.payload.userId;
       const isExitUser = await userSchema.findOne({ _id: user_id });
       if (!isExitUser) {
@@ -16,13 +17,11 @@ class BookmarkController {
         });
       }
 
-      const allBookmarks = await bookmarkSchema
-        .findOne({ user_id })
-        .populate({
-          path: "blogs.blog_id",
-          select: ["title", "author"],
-          populate: { path: "author", select: ["username"] },
-        });
+      const allBookmarks = await bookmarkSchema.findOne({ user_id }).populate({
+        path: "blogs.blog_id",
+        select: ["title", "author"],
+        populate: { path: "author", select: ["username"] },
+      });
       res.status(200).json({
         status: "success",
         data: allBookmarks.blogs,
@@ -110,8 +109,8 @@ class BookmarkController {
 
   async removeBookmark(req, res, next) {
     try {
+      console.log("REMOVE BOOKMARK");
       const { blog_id } = req.params;
-
       const user_id = req.payload.userId;
 
       // validate
@@ -154,6 +153,7 @@ class BookmarkController {
 
   async checkBookmarked(req, res, next) {
     try {
+      console.log("CHECK BOOKMARK");
       const { blog_id } = req.params;
       const user_id = req.payload.userId;
 

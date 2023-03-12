@@ -1,80 +1,90 @@
-
 const notiSchema = require("../models/noti.model");
 
 class NotiController {
   async getNotification(req, res, next) {
-    const id  = req.payload.userId;
-    const user_id = new RegExp(`^${id}`);
+    try {
+      console.log("GET NOTIFICATIONS");
+      const id = req.payload.userId;
+      const user_id = new RegExp(`^${id}`);
 
-    const allNoti = await notiSchema
-      .find({ user_id })
-      .populate({
-        path: "notifications.sender",
-        select: ["username", "_id", "avatar"],
-      })
-      .populate({ path: "notifications.target", select: ["title", "_id"] });
+      const allNoti = await notiSchema
+        .find({ user_id })
+        .populate({
+          path: "notifications.sender",
+          select: ["username", "_id", "avatar"],
+        })
+        .populate({ path: "notifications.target", select: ["title", "_id"] });
 
-    const notiArray = allNoti.reduce((init, noti) => {
-      return init.concat(noti.notifications);
-    }, []);
+      const notiArray = allNoti.reduce((init, noti) => {
+        return init.concat(noti.notifications);
+      }, []);
 
-    if (allNoti) {
-      res.json({
-        status: "success",
-        data: notiArray,
-      });
-    } else {
-      res.json({
-        status: "failed",
-        error: "Cound't find notification of user",
-      });
+      if (allNoti) {
+        res.json({
+          status: "success",
+          data: notiArray,
+        });
+      } else {
+        res.json({
+          status: "failed",
+          error: "Cound't find notification of user",
+        });
+      }
+    } catch (error) {
+      next(error);
     }
   }
 
   async getNotificationById(req, res, next) {
-    const { id } = req.params;
-    const user_id = new RegExp(`^${id}`);
+    try {
+      console.log("GET ACTIVITY");
+      const { id } = req.params;
 
-    const allNoti = await notiSchema
-      .find({ user_id })
-      .populate({
-        path: "notifications.sender",
-        select: ["username", "_id", "avatar"],
-      })
-      .populate({ path: "notifications.target", select: ["title", "_id"] });
+      const allDoc = await notiSchema
+        .find({ notifications: { $elemMatch: { sender: id } } })
+        .populate({
+          path: "notifications.sender",
+          select: ["username", "_id", "avatar"],
+        })
+        .populate({ path: "notifications.target", select: ["title", "_id"] });
 
-    const notiArray = allNoti.reduce((init, noti) => {
-      return init.concat(noti.notifications);
-    }, []);
+      const allNotis = allDoc.reduce((init, notis) => {
+        return init.concat(notis.notifications);
+      }, []);
 
-    const activity = notiArray.filter((noti) => {
-      if (noti.sender._id.toString() === id) {
-        const type = noti.type;
-        switch (type) {
-          case "LIKE":
-            return noti;
-          case "COMMENT":
-            return noti;
-          case "STORE":
-            return noti;
-          default:
-            return;
+      if (allNotis.length > 0) {
+        const activity = allNotis.filter((noti) => {
+          if (noti.sender._id.toString() === id) {
+            const type = noti.type;
+            switch (type) {
+              case "LIKE":
+                return noti;
+              case "COMMENT":
+                return noti;
+              case "STORE":
+                return noti;
+              case "REPLY":
+                return noti;
+              default:
+                return;
+            }
+          }
+        });
 
+        if (activity) {
+          res.json({
+            status: "success",
+            data: activity,
+          });
+        } else {
+          res.json({
+            status: "failed",
+            error: "Cound't find notification of user",
+          });
         }
       }
-    });
-
-
-    if (activity) {
-      res.json({
-        status: "success",
-        data: activity,
-      });
-    } else {
-      res.json({
-        status: "failed",
-        error: "Cound't find notification of user",
-      });
+    } catch (error) {
+      next(error);
     }
   }
 
@@ -91,7 +101,6 @@ class NotiController {
           max: 1,
           notifications: notification,
         });
-        console.log("add new");
 
         await newNoti.save();
 
@@ -118,8 +127,6 @@ class NotiController {
           };
         }
       } else {
-        console.log("add old");
-
         const newNoti = await notiSchema.findOneAndUpdate(
           { user_id: _user_id, max: { $lt: 10 } },
           {
@@ -159,93 +166,100 @@ class NotiController {
         }
       }
     } catch (error) {
-      console.log(error);
+      next(error);
     }
   }
 
   async readOne(req, res, next) {
-    const user_id = req.payload.userId;
-    const _user_id = new RegExp(`^${user_id}`);
+    try {
+      console.log("READ ONE");
+      const user_id = req.payload.userId;
+      const _user_id = new RegExp(`^${user_id}`);
 
-    const id = req.params.id;
+      const id = req.params.id;
 
-    console.log("readed ", id);
-    const newNoti = await notiSchema.updateOne(
-      {
-        user_id: _user_id,
-        "notifications._id": id,
-      },
-      {
-        $push: { "notifications.$.read_by": { readerId: user_id } },
+      const newNoti = await notiSchema.updateOne(
+        {
+          user_id: _user_id,
+          "notifications._id": id,
+        },
+        {
+          $push: { "notifications.$.read_by": { readerId: user_id } },
+        }
+      );
+
+      const allNoti = await notiSchema
+        .find({ user_id: _user_id })
+        .populate({
+          path: "notifications.sender",
+          select: ["username", "_id", "avatar"],
+        })
+        .populate({
+          path: "notifications.target",
+          select: ["title", "_id"],
+        });
+
+      const notiArray = allNoti.reduce((init, noti) => {
+        return init.concat(noti.notifications);
+      }, []);
+
+      if (allNoti) {
+        res.json({
+          status: "success",
+          data: notiArray,
+        });
+      } else {
+        res.json({
+          status: "failed",
+          error: "Cound't find notification of user",
+        });
       }
-    );
-
-    const allNoti = await notiSchema
-      .find({ user_id: _user_id })
-      .populate({
-        path: "notifications.sender",
-        select: ["username", "_id", "avatar"],
-      })
-      .populate({
-        path: "notifications.target",
-        select: ["title", "_id"],
-      });
-
-    const notiArray = allNoti.reduce((init, noti) => {
-      return init.concat(noti.notifications);
-    }, []);
-
-    console.log(newNoti);
-    if (allNoti) {
-      res.json({
-        status: "success",
-        data: notiArray,
-      });
-    } else {
-      res.json({
-        status: "failed",
-        error: "Cound't find notification of user",
-      });
+    } catch (error) {
+      next(error);
     }
   }
 
   async readAll(req, res, next) {
-    const user_id = req.payload.userId;
-    const _user_id = new RegExp(`^${user_id}`);
+    try {
+      console.log("READ ALL");
+      const user_id = req.payload.userId;
+      const _user_id = new RegExp(`^${user_id}`);
 
-    console.log(user_id);
-    const newNoti = await notiSchema.updateMany(
-      {
-        user_id: _user_id,
-        $not: { "notifications.read_by.readerId": user_id },
-      },
-      {
-        $push: { "notifications.$[].read_by": { readerId: user_id } },
+      const newNoti = await notiSchema.updateMany(
+        {
+          user_id: _user_id,
+          $not: { "notifications.read_by.readerId": user_id },
+        },
+        {
+          $push: { "notifications.$[].read_by": { readerId: user_id } },
+        }
+      );
+
+      const allNoti = await notiSchema
+        .find({ user_id: _user_id })
+        .populate({
+          path: "notifications.sender",
+          select: ["username", "_id", "avatar"],
+        })
+        .populate({ path: "notifications.target", select: ["title", "_id"] });
+
+      const notiArray = allNoti.reduce((init, noti) => {
+        return init.concat(noti.notifications);
+      }, []);
+
+      if (allNoti) {
+        res.json({
+          status: "success",
+          data: notiArray,
+        });
+      } else {
+        res.json({
+          status: "failed",
+          error: "Cound't find notification of user",
+        });
       }
-    );
-
-    const allNoti = await notiSchema
-      .find({ user_id: _user_id })
-      .populate({
-        path: "notifications.sender",
-        select: ["username", "_id", "avatar"],
-      })
-      .populate({ path: "notifications.target", select: ["title", "_id"] });
-
-    const notiArray = allNoti.reduce((init, noti) => {
-      return init.concat(noti.notifications);
-    }, []);
-
-    if (allNoti) {
-      res.json({
-        status: "success",
-        data: notiArray,
-      });
-    } else {
-      res.json({
-        status: "failed",
-        error: "Cound't find notification of user",
-      });
+    } catch (error) {
+      next(error);
     }
   }
 }

@@ -14,6 +14,8 @@ const { client } = require("../hepler/redisConnecter");
 class UserController {
   async getUsers(req, res, next) {
     try {
+      console.log("GET USERS");
+
       const q = req.query.q;
 
       if (q) {
@@ -30,6 +32,8 @@ class UserController {
 
   async getUser(req, res, next) {
     try {
+      console.log("GET USER");
+
       const id = req.params.id;
       const user = await userSchema
         .findOne({ _id: id }, { password: 0 })
@@ -66,10 +70,9 @@ class UserController {
       });
 
       const savedUser = await user.save();
-
       res.status(200).json({
         status: "success",
-        element: savedUser,
+        data: { user: savedUser },
       });
     } catch (error) {
       next(error);
@@ -78,6 +81,8 @@ class UserController {
 
   async login(req, res, next) {
     try {
+      console.log("LOGIN");
+
       const { email, password } = req.body;
       const { error } = userLoginValidate(req.body);
 
@@ -104,11 +109,11 @@ class UserController {
 
       return res.json({
         status: "success",
-        token: {
+        data: {
           accessToken,
           refreshToken,
+          user: user,
         },
-        data: user,
       });
     } catch (error) {
       next(error);
@@ -117,6 +122,8 @@ class UserController {
 
   async logout(req, res, next) {
     try {
+      console.log("LOGOUT");
+
       const { userId } = req.payload;
 
       client
@@ -137,6 +144,8 @@ class UserController {
 
   async refreshToken(req, res, next) {
     try {
+      console.log("REFRESH TOKEN");
+
       const { refreshToken } = req.body;
 
       if (!refreshToken) {
@@ -158,7 +167,7 @@ class UserController {
 
   async updateAvatar(req, res, next) {
     try {
-      console.log("Updating avatar");
+      console.log("UPDATE AVATAR");
       const user_id = req.payload.userId;
       const { avatar } = req.body;
 
@@ -167,9 +176,6 @@ class UserController {
         { avatar },
         { new: true }
       );
-
-      console.log(newUser)
-      console.log(newUser);
 
       return res.status(200).json({
         status: "success",

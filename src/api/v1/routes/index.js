@@ -4,6 +4,7 @@ const likeRouter = require('./like.router')
 const commentRouter = require('./comment.router')
 const bookmarkRouter = require('./bookmark.router')
 const notiRouter = require('./noti.router')
+const feedbackRouter = require('./feedback.router')
 
 function route (app) {
 
@@ -19,6 +20,7 @@ function route (app) {
    app.use("/api/v1/blog/comment", commentRouter )
    app.use("/api/v1/bookmark", bookmarkRouter )
    app.use("/api/v1/notifications", notiRouter )
+   app.use("/api/v1/feedback", feedbackRouter )
     
    
 }

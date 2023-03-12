@@ -96,26 +96,31 @@ class LikeController {
   }
 
   async checkLikedUser(req, res, next) {
-    const { blog_id } = req.params;
-    const user_id = req.payload.userId;
+    try {
+      console.log("CHECK LIKED");
+      const { blog_id } = req.params;
+      const user_id = req.payload.userId;
 
-    // Validate
+      // Validate
 
-    const likesOfBlog = await likeSchema.findOne({
-      blog_id: blog_id,
-      users: { $elemMatch: { user_id } },
-    });
-
-    if (!likesOfBlog) {
-      return res.json({
-        status: "success",
-        data: { liked: false },
+      const likesOfBlog = await likeSchema.findOne({
+        blog_id: blog_id,
+        users: { $elemMatch: { user_id } },
       });
-    } else {
-      return res.json({
-        status: "success",
-        data: { liked: true },
-      });
+
+      if (!likesOfBlog) {
+        return res.json({
+          status: "success",
+          data: { liked: false },
+        });
+      } else {
+        return res.json({
+          status: "success",
+          data: { liked: true },
+        });
+      }
+    } catch (error) {
+      next(error);
     }
   }
 }
