@@ -9,6 +9,11 @@ class BookmarkController {
     try {
       console.log("GET BOOKMARKS");
       const user_id = req.payload.userId;
+      const isUser = await userSchema.findOne({ _id: user_id });
+
+      if (!isUser) {
+        return next(createError.Unauthorized());
+      }
       const isExitUser = await userSchema.findOne({ _id: user_id });
       if (!isExitUser) {
         return res.json({
@@ -35,12 +40,14 @@ class BookmarkController {
     try {
       const { blog_id } = req.params;
       const user_id = req.payload.userId;
+      let isBookmarked = false;
 
       // validate
 
       const isExitUser = await userSchema.findOne({ _id: user_id });
-      let isBookmarked = false;
-
+      if (!isExitUser) {
+        return next(createError.Unauthorized());
+      }
       // const isExitBlog = await blogSchema.findOne({ blog: blog_id });
       // if(!isExitBlog) {
       //   return res.json({

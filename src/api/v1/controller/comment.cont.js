@@ -1,5 +1,8 @@
 const commentSchema = require("../models/comment.model");
 const blogSchema = require("../models/blog.model");
+const userSchema = require("../models/user.model");
+
+const createError = require("http-errors");
 
 class CommentController {
   async getComments(req, res, next) {
@@ -35,7 +38,14 @@ class CommentController {
       const blog_id = req.params.id;
       const _blog_id = new RegExp(`^${blog_id}`);
       const { content, isRoot, parrent } = req.body;
+
       const author = req.payload.userId;
+
+      const isUser = await userSchema.findOne({_id : author});
+      if(!isUser) {
+        return next(createError.Unauthorized());
+      }
+
 
       const isOld = await commentSchema.findOne({ blog_id: blog_id });
       if (!isOld) {

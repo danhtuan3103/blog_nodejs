@@ -1,6 +1,7 @@
 const blogSchema = require("../models/blog.model");
 const userSchema = require("../models/user.model");
 const likeSchema = require("../models/like.model");
+const createError = require("http-errors");
 
 class LikeController {
   async tonggleLike(req, res, next) {
@@ -8,6 +9,12 @@ class LikeController {
       const { blog_id } = req.body;
       const user_id = req.payload.userId;
 
+      const isUser = await userSchema.indOne({_id : user_id});
+
+      if(!isUser) {
+        return next(createError.Unauthorized());
+      }
+   
       const likesOfBlog = await likeSchema.findOne({ blog_id: blog_id });
       // console.log("Hello ", user_id, blog_id)
 
@@ -102,6 +109,11 @@ class LikeController {
       const user_id = req.payload.userId;
 
       // Validate
+      const isUser = await userSchema.findOne({_id : user_id});
+
+      if(!isUser) {
+        return next(createError.Unauthorized());
+      }
 
       const likesOfBlog = await likeSchema.findOne({
         blog_id: blog_id,
