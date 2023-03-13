@@ -47,8 +47,8 @@ class NotiController {
       console.log("GET ACTIVITY");
       const { id } = req.params;
 
-      const isUser = await userSchema.findOne({_id : id});
-      
+      const isUser = await userSchema.findOne({ _id : id});
+
       if(!isUser) {
         return next(createError.Unauthorized());
       }
@@ -67,7 +67,7 @@ class NotiController {
 
       if (allNotis.length > 0) {
         const activity = allNotis.filter((noti) => {
-          if (noti.sender._id.toString() === id) {
+          if (noti?.sender?._id.toString() === id) {
             const type = noti.type;
             switch (type) {
               case "LIKE":

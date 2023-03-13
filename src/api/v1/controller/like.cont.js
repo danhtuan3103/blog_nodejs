@@ -9,7 +9,7 @@ class LikeController {
       const { blog_id } = req.body;
       const user_id = req.payload.userId;
 
-      const isUser = await userSchema.indOne({_id : user_id});
+      const isUser = await userSchema.findOne({_id : user_id});
 
       if(!isUser) {
         return next(createError.Unauthorized());
