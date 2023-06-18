@@ -42,6 +42,7 @@ const connect = (io) => {
       });
 
       socket.on("send_noti", async (data) => {
+        console.log(data);
         const newNoti = await notiController.addNotification(data);
         // console.log("newNoti")
         const status = newNoti?.status;

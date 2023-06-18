@@ -2,12 +2,13 @@ const JWT = require("jsonwebtoken");
 require("dotenv").config();
 const { client } = require("./redisConnecter");
 const createError = require("http-errors");
+
 const signAccessToken = async (userId) => {
   return new Promise((resolve, reject) => {
     const payload = { userId };
     const secret = process.env.ACCESS_TOKEN_SECRET;
     const option = {
-      expiresIn: "5d",
+      expiresIn: "30s",
     };
 
     JWT.sign(payload, secret, option, (err, token) => {
@@ -29,8 +30,8 @@ const verifyAccessToken = (req, res, next) => {
 
     JWT.verify(token, process.env.ACCESS_TOKEN_SECRET, (err, payload) => {
       if (err) {
-        // console.log(err);
         if (err.name === "TokenExpiredError") {
+          console.log("Token expired");
           return res.status(200).json({
             code: 401,
             message: err.message,
@@ -51,24 +52,24 @@ const verifyAccessToken = (req, res, next) => {
 const verifyAccessTokenSocket = (socket, next) => {
   try {
     if (socket.handshake.query && socket.handshake.query.token) {
-        const token = socket.handshake.query.token;
-        console.log(token)
-        JWT.verify(token, process.env.ACCESS_TOKEN_SECRET, (err, payload) => {
-            if (err) {
-              // console.log(err);
-              if (err.name === "TokenExpiredError") {
-                return res.status(200).json({
-                  code: 401,
-                  message: err.message,
-                });
-              }
-      
-              return next(createError.Unauthorized(err.message));
-            }
-      
-            socket.payload = payload;
-            return next();
-          });
+      const token = socket.handshake.query.token;
+      console.log(token);
+      JWT.verify(token, process.env.ACCESS_TOKEN_SECRET, (err, payload) => {
+        if (err) {
+          // console.log(err);
+          if (err.name === "TokenExpiredError") {
+            return res.status(200).json({
+              code: 401,
+              message: err.message,
+            });
+          }
+
+          return next(createError.Unauthorized(err.message));
+        }
+
+        socket.payload = payload;
+        return next();
+      });
     } else {
       next(new Error("Authentication error"));
     }

@@ -9,9 +9,9 @@ class NotiController {
       const id = req.payload.userId;
       const user_id = new RegExp(`^${id}`);
 
-      const isUser = await userSchema.findOne({_id : id});
-      
-      if(!isUser) {
+      const isUser = await userSchema.findOne({ _id: id });
+
+      if (!isUser) {
         return next(createError.Unauthorized());
       }
       const allNoti = await notiSchema
@@ -47,9 +47,9 @@ class NotiController {
       console.log("GET ACTIVITY");
       const { id } = req.params;
 
-      const isUser = await userSchema.findOne({ _id : id});
+      const isUser = await userSchema.findOne({ _id: id });
 
-      if(!isUser) {
+      if (!isUser) {
         return next(createError.Unauthorized());
       }
 
@@ -104,11 +104,12 @@ class NotiController {
   async addNotification({ notification }) {
     try {
       const user_id = notification.receiver;
+      console.log(user_id);
 
-      const isUser = await userSchema.findOne({_id : user_id});
-      
-      if(!isUser) {
-        return next(createError.Unauthorized());
+      const isUser = await userSchema.findOne({ _id: user_id });
+
+      if (!isUser) {
+        console.log("User not found");
       }
 
       const isOld = await notiSchema.findOne({ user_id });
@@ -185,7 +186,7 @@ class NotiController {
         }
       }
     } catch (error) {
-      next(error);
+      console.log(error);
     }
   }
 
@@ -194,10 +195,10 @@ class NotiController {
       console.log("READ ONE");
       const user_id = req.payload.userId;
       const _user_id = new RegExp(`^${user_id}`);
-      
-      const isUser = await userSchema.findOne({_id : user_id});
-      
-      if(!isUser) {
+
+      const isUser = await userSchema.findOne({ _id: user_id });
+
+      if (!isUser) {
         return next(createError.Unauthorized());
       }
       const id = req.params.id;
@@ -249,9 +250,9 @@ class NotiController {
       const user_id = req.payload.userId;
       const _user_id = new RegExp(`^${user_id}`);
 
-      const isUser = await userSchema.findOne({_id : user_id});
-      
-      if(!isUser) {
+      const isUser = await userSchema.findOne({ _id: user_id });
+
+      if (!isUser) {
         return next(createError.Unauthorized());
       }
 

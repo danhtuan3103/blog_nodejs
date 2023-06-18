@@ -77,7 +77,6 @@ class BlogController {
     try {
       const id = req.params.id;
 
-
       if (!id) {
         return res.json(401).json({
           status: "failed",
@@ -99,13 +98,17 @@ class BlogController {
     try {
       console.log("CREATE BLOG");
 
-      const { title, content, author, thumbnail = null, topic } = req.body;
-      const isExit = await userSchema.find({ _id: author._id });
-      let _topic = topic.split(",");
+      const { title, content, author, thumbnail = null, topics } = req.body;
 
-      _topic = _topic.map((topic) => topic.trim());
+      const isExit = await userSchema.find({ _id: author._id });
+
       if (isExit) {
-        const { error } = blogValidate({ title, content, author, topic });
+        const { error } = blogValidate({
+          title,
+          content,
+          author,
+          topic: topics,
+        });
 
         if (error) {
           throw createError(error.details[0].message);
@@ -116,7 +119,7 @@ class BlogController {
           content: content,
           author: author,
           thumbnail: thumbnail,
-          topic: _topic,
+          topic: JSON.parse(topics),
         });
 
         const savedBlog = await blog.save();
@@ -141,8 +144,8 @@ class BlogController {
             });
           }
         }
-      }else {
-        return next(createError.Unauthorized())
+      } else {
+        return next(createError.Unauthorized());
       }
     } catch (err) {
       next(err);

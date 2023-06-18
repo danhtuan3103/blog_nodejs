@@ -14,7 +14,7 @@ const { verifyAccessTokenSocket } = require("./src/api/v1/hepler/jwt");
 const server = require("http").createServer(app);
 const socket = require("./src/api/v1/services/socket");
 const path = require("path");
-require('dotenv').config()
+require("dotenv").config();
 
 const io = require("socket.io")(server, {
   cors: {
@@ -26,7 +26,7 @@ io.use(verifyAccessTokenSocket);
 
 socket.connect(io);
 const fileName = path.join(__dirname, "../src/api/v1/Logs", "error.log");
-
+app.use("/public", express.static(path.join(__dirname, "public")));
 db.connect();
 redis.connect();
 app.use(express.json());
@@ -36,7 +36,6 @@ app.use(helmet());
 // app.use(morgan());
 app.use(compression());
 
-app.use(express.static("public"));
 route(app);
 
 app.use((req, res, next) => {

@@ -1,6 +1,63 @@
-13-03-2023	15:34:07 ---- 164c2ef3-4d66-482e-9630-43b15e7d51c3 --- (POST) /api/v1/blog/like --- userSchema.indOne is not a function
-13-03-2023	15:34:19 ---- 1e4dcc25-f800-4fc8-8b5d-a88e6b3ca4da --- (POST) /api/v1/blog/like --- userSchema.indOne is not a function
-13-03-2023	15:34:52 ---- 17c127eb-81a1-4bb7-a01b-0bb599a6a343 --- (POST) /api/v1/blog/like --- userSchema.indOne is not a function
-13-03-2023	15:35:26 ---- 64fa51fa-6e9d-461f-88ce-97ce5acfe529 --- (GET) /api/v1/notifications/640db983564f46c2e504ade1 --- Cannot read properties of null (reading '_id')
-13-03-2023	15:36:25 ---- 6a1df097-3adf-4424-ba08-85d7f558bd4e --- (GET) /api/v1/notifications/640db983564f46c2e504ade1 --- Cannot read properties of null (reading '_id')
-13-03-2023	15:36:55 ---- 1311252c-5031-47fb-bba9-c5c9163af64f --- (GET) /api/v1/notifications/640db983564f46c2e504ade1 --- Cannot read properties of null (reading '_id')
+17-06-2023	22:33:05 ---- b7500ccf-1a17-4dca-a547-6a82b7d2796b --- (POST) /api/v1/user/signin --- Unexpected token " in JSON at position 0
+17-06-2023	22:33:34 ---- bd4e3020-1c88-4bd6-b276-51f84d7eab60 --- (POST) /api/v1/user/signin --- Unexpected token " in JSON at position 0
+17-06-2023	22:33:54 ---- 71f50fe5-93f3-4917-9d48-22557bd6497e --- (POST) /api/v1/user/signin --- Unexpected token " in JSON at position 0
+18-06-2023	11:07:50 ---- 397333ff-8220-4dc8-b92a-59ff566375a8 --- (POST) /api/v1/user/signin --- User not registed
+18-06-2023	11:13:19 ---- cfc2943e-993d-43e7-84fa-a936000e704b --- (POST) /api/v1/user/login --- User not registed
+18-06-2023	11:17:01 ---- 4bb586b9-8a8c-44d4-9fe3-b73a99b2e50f --- (POST) /api/v1/user/login --- User not registed
+18-06-2023	11:24:13 ---- 7f0b6051-b2d6-455e-afcd-aab816587645 --- (POST) /api/v1/user/login --- next is not defined
+18-06-2023	11:24:36 ---- 2e2046cd-8f75-4fd0-b5de-c409b09de3b6 --- (POST) /api/v1/user/login --- next is not defined
+18-06-2023	11:25:27 ---- b72a81c8-dc53-4f70-be20-ca9662617d21 --- (POST) /api/v1/user/login --- next is not defined
+18-06-2023	11:28:30 ---- 85ac67fc-21b2-40ea-8a29-a8b1347ccbea --- (POST) /api/v1/user/login --- next is not a function
+18-06-2023	11:29:20 ---- 97a235eb-a587-4530-86e1-3aa96c9b0d18 --- (POST) /api/v1/user/login --- data and hash arguments required
+18-06-2023	11:42:37 ---- 86794cb9-e066-4be6-9b8b-7ebf929263e4 --- (POST) /api/v1/user/login --- userRes is not defined
+18-06-2023	11:45:16 ---- 533d5014-7df1-40f9-8890-b57b12c90e43 --- (POST) /api/v1/user/avatar/update --- Assignment to constant variable.
+18-06-2023	11:48:12 ---- 17d0c3d1-c8a8-44c3-ab74-cf6889e473c8 --- (POST) /api/v1/user/avatar/update --- Assignment to constant variable.
+18-06-2023	11:54:28 ---- a8d8f8a1-af8a-4c47-8b1a-763046d58777 --- (POST) /api/v1/user/avatar/update --- Assignment to constant variable.
+18-06-2023	11:57:32 ---- 9e49dffa-b565-4ebe-9dc6-2445668fa334 --- (POST) /api/v1/user/avatar/update --- Assignment to constant variable.
+18-06-2023	12:01:05 ---- 156d2133-6dd9-48ef-96bf-e69ab80cd663 --- (POST) /api/v1/user/avatar/upload --- Assignment to constant variable.
+18-06-2023	12:13:39 ---- 78bd7e1c-9f85-46f7-8c60-fc004bccbe4f --- (POST) /api/v1/user/signin --- Cannot read properties of null (reading '_id')
+18-06-2023	12:14:41 ---- 7de2a2a3-e842-416b-abb8-f4347165efb9 --- (POST) /api/v1/user/signin --- Cannot read properties of null (reading '_id')
+18-06-2023	12:15:21 ---- 6c25d1fe-a595-4f2e-8806-98aa7261ae45 --- (POST) /api/v1/user/signup --- client.verifyIdToken is not a function
+18-06-2023	12:16:47 ---- 6da5c040-9c3f-40b2-9e38-9386d47ca243 --- (POST) /api/v1/user/signup --- client.verifyIdToken is not a function
+18-06-2023	12:17:40 ---- e884064c-789f-44d5-b6ff-2802c0f3cdea --- (POST) /api/v1/user/signup --- client.verifyIdToken is not a function
+18-06-2023	12:18:18 ---- 36283639-e51d-422a-b7d1-730e115d1dc5 --- (POST) /api/v1/user/signup --- User validation failed: password: Path `password` is required.
+18-06-2023	12:21:41 ---- b50593cc-0d19-4329-b9c1-0027d2e525b3 --- (POST) /api/v1/user/signup --- danhtuan3103@gmail.com is ready been registed
+18-06-2023	12:24:14 ---- e060822e-aea3-450a-ae9e-7359025a2a76 --- (POST) /api/v1/user/signup --- data and salt arguments required
+18-06-2023	12:28:40 ---- 755203c3-8558-4c40-822a-c52f3730376b --- (POST) /api/v1/user/signup --- User validation failed: password: Path `password` is required.
+18-06-2023	12:28:58 ---- 8d24a00c-0896-47e8-9f73-b3f8adb377b1 --- (GET) /api/v1/notifications --- jwt must be provided
+18-06-2023	12:29:01 ---- 50490f4e-aa9d-46fc-b8b6-70b06358c45e --- (GET) /api/v1/notifications --- jwt must be provided
+18-06-2023	12:29:11 ---- b554e339-8585-4699-9def-d33f4adc33da --- (GET) /api/v1/bookmark/check/648d8e9dcba4fff8800ecf8b --- jwt must be provided
+18-06-2023	12:29:11 ---- 9575aba7-3484-47d4-9f50-08c8f53384ed --- (GET) /api/v1/bookmark/check/648d8efccba4fff8800ecfa3 --- jwt must be provided
+18-06-2023	12:29:11 ---- 25d507f3-3211-494b-b3fe-27660e16b53e --- (GET) /api/v1/bookmark/check/648d8f56cba4fff8800ecfbb --- jwt must be provided
+18-06-2023	12:29:11 ---- 1d89ac73-2f8f-4240-8866-520a7d713586 --- (GET) /api/v1/bookmark/check/648d8f9ccba4fff8800ecfd5 --- jwt must be provided
+18-06-2023	12:31:46 ---- c283e637-c9af-4832-b4b7-d2bd746671ee --- (POST) /api/v1/user/logout --- jwt must be provided
+18-06-2023	12:31:58 ---- 1774f6e6-cf90-4b51-b1df-65f2c95dc603 --- (POST) /api/v1/user/signup --- Assignment to constant variable.
+18-06-2023	12:32:53 ---- 666e0504-946f-440c-a6f2-b243a4a36557 --- (POST) /api/v1/user/signin --- Assignment to constant variable.
+18-06-2023	12:33:02 ---- 17447839-1534-4b51-9ef7-4d8d2f839837 --- (POST) /api/v1/user/signin --- Assignment to constant variable.
+18-06-2023	12:34:08 ---- a6192c03-4ff8-455e-b61d-c5edd9f0a89d --- (POST) /api/v1/user/signup --- tuanbon21313@gmail.com is ready been registed
+18-06-2023	12:34:23 ---- 4fd2527d-c62d-4652-9299-1644731b3a39 --- (POST) /api/v1/user/signup --- Assignment to constant variable.
+18-06-2023	12:38:49 ---- d435ba71-da08-4dc7-9a45-1e86877591ee --- (POST) /api/v1/user/signup --- password is not defined
+18-06-2023	12:45:27 ---- 747bc194-3916-422f-8569-e68baf312cba --- (POST) /api/v1/user/signin --- savedUser is not defined
+18-06-2023	12:45:51 ---- 7fccc630-8d4c-4f02-89dd-165f9d3ab971 --- (POST) /api/v1/user/signin --- Cannot read properties of null (reading 'toObject')
+18-06-2023	12:47:03 ---- 022d067d-0c90-4d6f-b689-3e4e6eb39a4f --- (POST) /api/v1/user/signin --- Cannot read properties of null (reading 'toObject')
+18-06-2023	12:47:18 ---- 670424db-918d-4402-87a9-c7f24b0a6628 --- (POST) /api/v1/user/login --- User not registed
+18-06-2023	12:49:01 ---- b5d58216-bd8c-4101-ab4e-85d2ec34e2ac --- (POST) /api/v1/user/signin --- Cannot read properties of null (reading 'toObject')
+18-06-2023	12:49:31 ---- 7d9c2e6a-38c4-4329-b8c4-3598411014b1 --- (POST) /api/v1/user/signin --- Cannot convert undefined or null to object
+18-06-2023	12:50:52 ---- e6afc7e6-f18c-40e7-a8e6-5c1ecea26451 --- (POST) /api/v1/user/signin --- userWithoutPass is not defined
+18-06-2023	12:51:54 ---- 81b9e099-543a-4b08-90c4-9225659510d2 --- (POST) /api/v1/user/signin --- Assignment to constant variable.
+18-06-2023	12:52:25 ---- 82b47f6f-7df9-4ef7-867d-63adfe502c58 --- (POST) /api/v1/user/signin --- Assignment to constant variable.
+18-06-2023	12:53:42 ---- b5591061-c374-4981-a749-49e153052e61 --- (POST) /api/v1/user/refresh-token --- Unauthorized
+18-06-2023	12:53:47 ---- aa66b9ef-4d01-4482-91cd-5e0137c7b405 --- (GET) /api/v1/user/undefined --- Cast to ObjectId failed for value "undefined" (type string) at path "_id" for model "User"
+18-06-2023	12:53:48 ---- 6b4960f8-a480-464e-93d1-d454a77d71ed --- (GET) /api/v1/notifications/undefined --- Cast to ObjectId failed for value "undefined" (type string) at path "_id" for model "User"
+18-06-2023	12:54:49 ---- 1309db11-5ff4-4bbd-971f-15a75a0a818d --- (POST) /api/v1/user/refresh-token --- Unauthorized
+18-06-2023	14:35:34 ---- e41eed0b-eb94-43a7-adcb-9fe2173aebb3 --- (POST) /api/v1/user/signin/fb --- Not Found!
+18-06-2023	14:44:49 ---- 53e0129a-959c-4b16-806a-fa163a2514db --- (POST) /api/v1/user/signin/fb --- User not registed
+18-06-2023	14:47:30 ---- 21e2dd4c-1fc3-4314-bbb2-ba8e217a013f --- (POST) /api/v1/user/signin/fb --- User not registed
+18-06-2023	14:48:31 ---- 7a2eca27-bd0f-4fe6-a041-7c7be76eb087 --- (POST) /api/v1/user/signin/fb --- User not registed
+18-06-2023	14:52:30 ---- 9cae3748-6a24-42d0-976a-bd3ff8e08ec5 --- (POST) /api/v1/user/signup/fb --- User validation failed: password: Path `password` is required.
+18-06-2023	14:52:46 ---- 1b686548-adc3-4206-bc0f-cc864cbcd001 --- (POST) /api/v1/user/signup/fb --- User validation failed: password: Path `password` is required.
+18-06-2023	14:54:55 ---- 0508af0e-7d63-430f-bd66-8729abace7ee --- (POST) /api/v1/user/signup/fb --- tuanbon21313@gmail.com is ready been registed
+18-06-2023	14:55:32 ---- 566fb22a-6478-4921-96e2-dd809d8f68a0 --- (POST) /api/v1/user/signup/fb --- tuanbon21313@gmail.com is ready been registed
+18-06-2023	14:55:42 ---- e677297c-0eb0-4954-a666-7d36339e6bb7 --- (POST) /api/v1/user/signup/fb --- tuanbon21313@gmail.com is ready been registed
+18-06-2023	14:56:30 ---- 54b14e4b-5122-4260-982c-48db8023073a --- (POST) /api/v1/user/signup/fb --- tuanbon21313@gmail.com is ready been registed
+18-06-2023	14:57:24 ---- 07fb8f59-d533-4ca8-b929-6e52bcd3b811 --- (POST) /api/v1/user/signup/fb --- tuanbon21313@gmail.com is ready been registed
