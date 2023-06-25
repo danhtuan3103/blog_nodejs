@@ -3,6 +3,7 @@ const router = express.Router();
 const UserController = require("../controller/user.cont");
 const { verifyAccessToken } = require("../hepler/jwt");
 const upload = require("../utils/upload");
+const passport = require("passport");
 
 router.get("/", UserController.getUsers);
 router.get("/:id", UserController.getUser);
